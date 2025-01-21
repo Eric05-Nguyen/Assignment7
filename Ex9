@@ -1,0 +1,52 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex9 {
+    public static ArrayList<Integer> nhap() {
+        Scanner md = new Scanner(System.in);
+        ArrayList<Integer> daySo = new ArrayList<>();
+        System.out.println("Nhap so phan tu cua day so :");
+        int n = md.nextInt();
+        System.out.print("nhap day so :");
+        for (int i = 0; i < n; i++) {
+            int so = md.nextInt();
+            daySo.add(so);
+        }
+        return daySo;
+    }
+    public static void xuat(ArrayList<Integer> daySo) {
+        System.out.println("Day so da nhap la :");
+        for (int i = 0; i < daySo.size(); i++) {
+            System.out.print(daySo.get(i) + " ");
+        }
+        System.out.println();
+    }
+    public static int timMin(ArrayList<Integer> daySo) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < daySo.size(); i++) {
+            if (daySo.get(i) < min) {
+                min = daySo.get(i);
+            }
+        }
+        return min;
+    }
+    public static int timMax(ArrayList<Integer> daySo) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < daySo.size(); i++) {
+            if (daySo.get(i) > max) {
+                max = daySo.get(i);
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> daySo = nhap();
+        int min = timMin(daySo);
+        int max = timMax(daySo);
+        xuat(daySo);
+        System.out.println("so lon nhat trong day la :" + max);
+        System.out.println("So nho nhat trong day la :" + min);
+    }
+}
