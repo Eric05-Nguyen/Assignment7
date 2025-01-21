@@ -1,0 +1,33 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Ex6 {
+    public static ArrayList<Integer> inPut() {
+        ArrayList<Integer> number = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 15; i++) {
+            number.add(random.nextInt(50) + 1);
+        }
+        return number;
+    }
+    public static void check(ArrayList<Integer> number) {
+        int soChan = 0;
+        int soLe = 0;
+        for (int i = 0; i < number.size(); i++) {
+            if (number.get(i) % 2 == 0) {
+                soChan++;
+            } else {
+                soLe++;
+            }
+        }
+        System.out.println("Cac so xuat hien la :"+number);
+        System.out.println("So luong so chan la :" + soChan);
+        System.out.println("So luong so le la :" + soLe);
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> numberList = inPut();
+        check(numberList);
+    }
+}
