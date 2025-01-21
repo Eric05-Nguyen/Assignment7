@@ -1,0 +1,45 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exx10 {
+    public static ArrayList<String> nhap() {
+        Scanner md = new Scanner(System.in);
+        ArrayList<String> Name = new ArrayList<>();
+        System.out.println("Nhap so luong ten :");
+        int n = md.nextInt();
+        md.nextLine();
+        System.out.print("nhap ten :");
+        for (int i = 0; i < n; i++) {
+            String ten = md.nextLine();
+            Name.add(ten);
+        }
+        return Name;
+    }
+    public static void xuat(ArrayList<String> Name) {
+        for (int i = 0; i < Name.size(); i++) {
+            System.out.print(Name.get(i) + ", ");
+        }
+        System.out.println();
+    }
+    public static void xoaTrung(ArrayList<String> Name) {
+        for (int i = 0; i < Name.size() - 1; i++) {
+            for (int j = i + 1; j < Name.size(); j++) {
+                if (Name.get(i).equals(Name.get(j))) {
+                    Name.remove(j);
+                    j--;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        ArrayList<String> Name = nhap();
+        System.out.print("Danh sach ban dau:");
+        xuat(Name);
+        xoaTrung(Name);
+        System.out.println("Danh sach sau khi xoa trung lap:");
+        xuat(Name);
+    }
+
+}
