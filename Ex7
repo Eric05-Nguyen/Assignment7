@@ -1,0 +1,39 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex7 {
+    public static ArrayList<Integer> nhap() {
+        Scanner md = new Scanner(System.in);
+        ArrayList<Integer> number = new ArrayList<>();
+        System.out.print("Nhap vao 5 so nguyen :");
+        for (int i = 0; i < 5; i++) {
+            int so = md.nextInt();
+            number.add(so);
+        }
+        return number;
+    }
+    public static void xuat(ArrayList<Integer> number) {
+        for (int i = 0; i < number.size(); i++) {
+            System.out.print(number.get(i) + " ");
+        }
+        System.out.println();
+    }
+    public static void dao(ArrayList<Integer> number) {
+        int n = number.size();
+        for (int i = 0; i < n / 2; i++) {
+            int tam = number.get(i);
+            number.set(i, number.get(n - 1 - i));
+            number.set(n - i - 1, tam);
+        }
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> number = nhap();
+        System.out.println("Day so vua nhap la:");
+        xuat(number);
+        dao(number);
+        System.out.println("Day so sau khi dao la:");
+        xuat(number);
+    }
+}
