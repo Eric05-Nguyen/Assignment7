@@ -1,0 +1,27 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ex8 {
+    public static ArrayList<String> nhap() {
+        ArrayList<String> nameFruit = new ArrayList<>();
+        Scanner md = new Scanner(System.in);
+        System.out.print("Nhap ten cac loai trai cay: ");
+        for (int i = 0; i < 5; i++) {
+            String ten = md.next();
+            nameFruit.add(ten);
+        }
+        return nameFruit;
+    }
+    public static ArrayList<String> copy(ArrayList<String> nameFruit) {
+        ArrayList<String> saoChepTraiCay = new ArrayList<>(nameFruit);
+        return new ArrayList<>(nameFruit);
+    }
+    public static void main(String[] args) {
+        ArrayList<String> nameFruit = nhap();
+        ArrayList<String> saoChepTraiCay = copy(nameFruit);
+        System.out.println("Danh sach trai cay ban dau " + nameFruit);
+        System.out.println("Danh sach trai cay sao chep :" + saoChepTraiCay);
+    }
+}
