@@ -1,0 +1,42 @@
+package assignment7;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Ex11 {
+    public static ArrayList<Integer> nhap() {
+        ArrayList<Integer> daySo = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            daySo.add(random.nextInt(100) + 1);
+        }
+        System.out.println("day so la: " + daySo);
+        return daySo;
+    }
+    public static int timNhoNhat(ArrayList<Integer> daySo) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < daySo.size(); i++) {
+            if (daySo.get(i) < min) {
+                min = daySo.get(i);
+            }
+        }
+        return min;
+    }
+    public static int timLonNhat(ArrayList<Integer> daySo) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < daySo.size(); i++) {
+            if (daySo.get(i) > max) {
+                max = daySo.get(i);
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> daySo = nhap();
+        int min = timNhoNhat(daySo);
+        int max = timLonNhat(daySo);
+        System.out.println("so lon nhat la :" + max);
+        System.out.println("so be nhat la :" + min);
+    }
+
+}
